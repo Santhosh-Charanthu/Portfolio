@@ -1,0 +1,360 @@
+/* Floating Button */
+.circle-button {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #00eaff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+/* Hover Effect (Fix: Ensures Button Stays in Place) */
+.circle-button:hover {
+  background-color: #00c8d8;
+  transform: translateX(-50%) scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Downward Arrow */
+.arrow-down {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border: solid black;
+  border-width: 0 4px 4px 0;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+  bottom: 9%;
+}
+
+/* Hover Text - Floating Above Button */
+/* .hover-text {
+  position: fixed;
+  bottom: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: black;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  white-space: nowrap;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+} */
+
+/* tool Arrow */
+.hover-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+}
+
+/* Show tool */
+.circle-button:hover + .hover-text {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+.circle-button:focus {
+  outline: none;
+  z-index: 1;
+}
+
+/* Fullscreen Scrollable Overlay */
+.overlay-page {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: linear-gradient(to right, #000000, #1a1a2e); */
+  /* background: linear-gradient(to bottom, #000000, #1a1a1a, #333333); */
+  /* background: linear-gradient(120deg, #000000, #121212, #242424); */
+  background: rgb(10, 9, 39);
+  background: linear-gradient(
+    90deg,
+    rgba(10, 9, 39, 1) 0%,
+    rgba(15, 20, 26, 1) 35%,
+    rgba(9, 9, 10, 1) 100%
+  );
+  overflow-x: hidden;
+  overflow-y: auto; /* Enables scrolling */
+  max-height: 100vh;
+  padding: 20px;
+  transform: translateY(100%); /* Start fully off-screen */
+  transition: transform 0.8s ease-in-out;
+  z-index: 100;
+  visibility: hidden; /* Hide before animation starts */
+  opacity: 0;
+}
+
+/* When active, slide up from bottom */
+.overlay-page.active {
+  transform: translateY(0); /* Moves overlay up */
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Close Button */
+.close-button {
+  position: sticky;
+  top: 20px;
+  left: 100%;
+  background: none;
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.close-button:focus {
+  outline: none;
+}
+
+/* Heading Styling */
+.overlay-page h2 {
+  font-size: 35px;
+  margin-top: 0;
+  color: #c7b198;
+}
+
+.parent {
+  display: flex;
+  height: 1000px;
+  justify-content: space-around;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.999s;
+}
+
+.card-front {
+  background-color: black;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 24px;
+  transform: rotateY(0deg);
+}
+
+.desc-card {
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.1); /* Glass effect */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 1.2rem;
+  height: 300px;
+  width: 50%;
+  text-align: left;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid transparent;
+}
+
+/* Gradient Border */
+.desc-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1.2rem;
+  padding: 3px;
+  background: linear-gradient(135deg, #6dd5fa, #2193b0);
+  -webkit-mask: linear-gradient(white 0 0) content-box,
+    linear-gradient(white 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Text Styling */
+.desc-card h2 {
+  font-size: 25px;
+  font-weight: bold;
+  /* color: #00ced1; */
+  /* color: #ffa500; */
+  /* color: #a020f0; */
+  /* color: #c7ea46; */
+  color: #00ffff;
+}
+
+.desc-card p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #eef0f1;
+}
+
+.card {
+  width: 400px; /* Adjust based on your layout */
+  height: 300px; /* Set a fixed height or use a flexible value */
+  border-radius: 10px; /* Optional: Rounded corners */
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fills the div while maintaining aspect ratio */
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+  box-shadow: 2px 2px 10px #00ffff;
+}
+
+/* tool Styling */
+.tool {
+  position: absolute;
+  top: -40px; /* Moves tool to top */
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  color: #1f2937;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid rgba(229, 231, 235, 1);
+  z-index: 100;
+}
+
+/* tool arrow */
+.tool::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 8px;
+  border-style: solid;
+  border-color: #ffffff transparent transparent transparent;
+}
+
+/* Hover Effect: Show tool */
+.card:hover .tool {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Glow effect */
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(99, 102, 241, 0.7);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+  }
+}
+
+.tool strong {
+  animation: glow 2s infinite;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .tool {
+    font-size: 13px;
+    padding: 10px 16px;
+  }
+}
+
+.button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.svgIcon {
+  width: 12px;
+  transition-duration: 0.3s;
+  transform: rotate(180deg);
+}
+
+.svgIcon path {
+  fill: white;
+}
+
+.button:hover {
+  width: 100px;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+  background-color: rgb(181, 160, 255);
+  align-items: center;
+}
+
+.button:hover .svgIcon {
+  /* width: 20px; */
+  transition-duration: 0.3s;
+  transform: translateY(-200%);
+}
+
+.button::before {
+  position: absolute;
+  bottom: -20px;
+  content: "Go Down";
+  color: white;
+  /* transition-duration: .3s; */
+  font-size: 0px;
+}
+
+.button:hover::before {
+  font-size: 13px;
+  opacity: 1;
+  bottom: unset;
+  /* transform: translateY(-30px); */
+  transition-duration: 0.3s;
+}

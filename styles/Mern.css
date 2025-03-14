@@ -1,0 +1,28 @@
+.MERN {
+  height: 48px;
+  width: 48px;
+  margin-top: 20px;
+}
+
+.item img {
+  position: relative;
+  right: 25%;
+}
+
+span {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.container {
+  display: flex;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  right: 19%;
+  /* mediaquery */
+}

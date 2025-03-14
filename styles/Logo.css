@@ -1,0 +1,8 @@
+body {
+  overflow-y: hidden;
+}
+
+img {
+  height: 600px !important;
+  margin: 0 500px;
+}

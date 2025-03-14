@@ -1,0 +1,7 @@
+.mern {
+  display: flex; /* Aligns images in a row */
+  justify-content: center; /* Centers the images */
+  align-items: center;
+  gap: 10px; /* Space between images */
+  flex-wrap: wrap; /* Ensures responsiveness */
+}
