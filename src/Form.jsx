@@ -64,7 +64,7 @@ export default function Form() {
       </div>
       <div className="letsConnect">
         <div className="image">
-          <img src={image} alt="" />
+          <img src={image} alt="" loading="eager" />
         </div>
         <div className="form-container">
           <form onSubmit={handleSubmit}>

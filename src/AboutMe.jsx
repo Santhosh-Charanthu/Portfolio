@@ -97,7 +97,7 @@ export default function AboutMe() {
                   <MernStack />
                 </div>
                 <div className="photo ">
-                  <img src={photo} alt="" />
+                  <img src={photo} alt="" loading="eager" />
                   <Contact />
                 </div>
               </div>

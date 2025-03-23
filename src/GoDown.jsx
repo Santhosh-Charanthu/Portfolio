@@ -47,7 +47,12 @@ export default function GoDown() {
           </div>
 
           <div className="card">
-            <img className="webImg" src={ExploreNest} alt="ExploreNest" />
+            <img
+              className="webImg"
+              src={ExploreNest}
+              alt="ExploreNest"
+              loading="eager"
+            />
             <div role="tooltip" id="help-tooltip" className="tool">
               <strong>
                 <a
