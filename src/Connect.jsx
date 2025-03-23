@@ -15,7 +15,6 @@ export default function Connect() {
   };
 
   useEffect(() => {
-    console.log("Modal state changed:", showModal);
     document.body.style.overflow = showModal ? "hidden" : "unset";
     return () => {
       document.body.style.overflow = "unset";

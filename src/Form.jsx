@@ -1,5 +1,5 @@
 import { useState } from "react";
-import image from "./assets/connect4.jpg";
+import image from "./assets/connect4.webp";
 import emailjs from "@emailjs/browser";
 import "../styles/Form.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";

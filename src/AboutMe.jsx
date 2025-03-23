@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import photo from "./assets/Mee.jpg";
+import photo from "./assets/Mee.webp";
 import ReactLogo from "./assets/react.png";
 import MongoDb from "./assets/mongodb.png";
 
