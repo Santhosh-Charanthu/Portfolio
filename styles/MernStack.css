@@ -4,4 +4,5 @@
   align-items: center;
   gap: 10px; /* Space between images */
   flex-wrap: wrap; /* Ensures responsiveness */
+  margin-top: 0;
 }

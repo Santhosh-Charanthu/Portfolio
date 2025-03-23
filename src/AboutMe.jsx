@@ -103,7 +103,7 @@ export default function AboutMe() {
               </div>
 
               <button className="close-btn" onClick={handleCloseModal}>
-                &#10006;
+                ❌
               </button>
             </motion.div>
           </motion.div>

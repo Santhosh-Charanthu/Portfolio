@@ -1,3 +1,4 @@
+/* src/styles/Background.css */
 @keyframes animate {
   0% {
     transform: translateY(0) rotate(0deg);
@@ -5,7 +6,7 @@
     border-radius: 0;
   }
   100% {
-    transform: translateY(-100vh) rotate(720deg); /* Adjusted to viewport height */
+    transform: translateY(-100vh) rotate(720deg); /* Move up full viewport height */
     opacity: 0;
     border-radius: 50%;
   }
@@ -19,8 +20,8 @@
   top: 0;
   left: 0;
   background: #000000;
-  overflow-x: hidden;
-  overflow-y: scroll; /* Prevents scrolling */
+  overflow: hidden; /* Changed from overflow-y: scroll to hide all overflow */
+  pointer-events: none; /* Prevents background from interfering with scrolling */
 }
 
 .background li {
@@ -29,6 +30,7 @@
   list-style: none;
   background: rgba(255, 255, 255, 0.2);
   animation: animate 19s linear infinite;
+  bottom: -193px; /* Default bottom position off-screen */
 }
 
 /* Default Sizes for Large Screens */
@@ -36,135 +38,107 @@
   left: 62%;
   width: 170px;
   height: 170px;
-  bottom: -170px;
   animation-delay: 1s;
 }
 .background li:nth-child(1) {
   left: 11%;
   width: 102px;
   height: 102px;
-  bottom: -102px;
   animation-delay: 4s;
 }
 .background li:nth-child(2) {
   left: 89%;
   width: 193px;
   height: 193px;
-  bottom: -193px;
   animation-delay: 5s;
 }
 .background li:nth-child(3) {
   left: 15%;
   width: 167px;
   height: 167px;
-  bottom: -167px;
   animation-delay: 15s;
 }
 .background li:nth-child(4) {
   left: 15%;
   width: 103px;
   height: 103px;
-  bottom: -103px;
   animation-delay: 20s;
 }
 .background li:nth-child(5) {
   left: 73%;
   width: 176px;
   height: 176px;
-  bottom: -176px;
   animation-delay: 12s;
 }
 .background li:nth-child(6) {
   left: 69%;
   width: 148px;
   height: 148px;
-  bottom: -148px;
   animation-delay: 25s;
 }
 .background li:nth-child(7) {
   left: 40%;
   width: 193px;
   height: 193px;
-  bottom: -193px;
   animation-delay: 7s;
 }
 .background li:nth-child(8) {
-  left: 62%;
+  left: Policing 2%;
   width: 126px;
   height: 126px;
-  bottom: -126px;
   animation-delay: 40s;
 }
 .background li:nth-child(9) {
   left: 28%;
   width: 186px;
   height: 186px;
-  bottom: -186px;
   animation-delay: 28s;
 }
 
 /* Responsive Scaling for Small Screens (Below 676px) */
 @media (max-width: 676px) {
   .background li {
-    width: calc(50% * 20px); /* Reduce size by 50% */
-    height: calc(50% * 20px);
+    bottom: -97px; /* Adjusted default bottom position */
   }
 
   .background li:nth-child(0) {
     width: 85px;
     height: 85px;
-    bottom: -85px;
   }
   .background li:nth-child(1) {
     width: 51px;
     height: 51px;
-    bottom: -51px;
   }
   .background li:nth-child(2) {
     width: 97px;
     height: 97px;
-    bottom: -97px;
   }
   .background li:nth-child(3) {
     width: 83px;
     height: 83px;
-    bottom: -83px;
   }
   .background li:nth-child(4) {
     width: 51px;
     height: 51px;
-    bottom: -51px;
   }
   .background li:nth-child(5) {
     width: 88px;
     height: 88px;
-    bottom: -88px;
   }
   .background li:nth-child(6) {
     width: 74px;
     height: 74px;
-    bottom: -74px;
   }
   .background li:nth-child(7) {
     width: 97px;
     height: 97px;
-    bottom: -97px;
   }
   .background li:nth-child(8) {
     width: 63px;
     height: 63px;
-    bottom: -63px;
   }
   .background li:nth-child(9) {
     width: 93px;
     height: 93px;
-    bottom: -93px;
-  }
-}
-
-@media (max-width: 676px) {
-  .background li {
-    width: 50px; /* Reduce size */
-    height: 50px;
   }
 }

@@ -5,8 +5,8 @@ import "../styles/Dashboard.css";
 
 export default function Dashboard() {
   return (
-    <div className="container">
-      {/* <Connect /> */}
+    <div className="dashboardContainer">
+      <Connect />
       <div className="text-content">
         <h1>Santhosh Charanthu</h1>
         <p>MERN Stack Developer</p>

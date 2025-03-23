@@ -1,28 +1,36 @@
-.container {
+.dashboardContainer {
   display: flex;
   align-items: center;
   text-align: center;
   padding: 20px;
   width: 80%;
   margin: 0 auto;
+  min-height: 100vh;
+  flex-wrap: nowrap; /* Keep side by side */
+  justify-content: space-between; /* Space out content and image */
+  gap: 20px;
 }
 
 /* Text Content Styling */
 .text-content {
   display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  text-align: left; /* Ensures all text is left-aligned */
-  align-items: flex-start; /* Aligns items (h1, p, button) to the left */
-  gap: 10px; /* Adds space between h1, p, and button */
+  flex-direction: column;
+  text-align: left;
+  align-items: flex-start;
+  gap: 10px;
+  flex: 1; /* Allow text-content to grow and shrink */
+  min-width: 200px; /* Ensure it doesn’t get too narrow */
 }
 
 /* Responsive Image */
-img {
+img.responsive-logo {
   max-width: 100%;
   height: auto;
   width: 600px; /* Default size */
-  margin-left: 50px;
+  margin-left: 0;
   z-index: 1;
+  flex: 1; /* Allow image to grow and shrink */
+  min-width: 200px; /* Ensure it doesn’t get too narrow */
 }
 
 /* Heading and Paragraph */
@@ -30,6 +38,7 @@ h1 {
   white-space: nowrap;
   margin-bottom: 0;
   z-index: 10;
+  font-size: 48px; /* Default size for larger screens */
 }
 
 p {
@@ -52,83 +61,154 @@ p {
 
 /* Responsive Adjustments */
 @media (max-width: 1240px) and (min-width: 1025px) {
-  img {
-    max-width: 100%;
-    height: auto;
-    width: 500px; /* Default size */
-    margin-left: 50px;
-    z-index: 1;
+  img.responsive-logo {
+    width: 500px;
   }
-
   h1 {
     font-size: 40px;
   }
-
   .text-content {
     position: relative;
-    right: 10%;
+    right: 0;
   }
 }
 
 @media (max-width: 1024px) {
-  img {
-    max-width: 100%;
-    height: auto;
-    width: 400px; /* Default size */
-    margin-left: 50px;
-    z-index: 1;
+  img.responsive-logo {
+    width: 400px;
   }
-
   h1 {
     font-size: 30px;
   }
-
   .text-content {
-    position: relative;
-    right: 10%;
+    right: 0;
   }
 }
 
 @media (max-width: 768px) {
-  img {
+  .dashboardContainer {
+    padding: 15px;
+    width: 90%;
+    gap: 15px;
+  }
+  img.responsive-logo {
     width: 300px;
   }
-
+  .text-content {
+    right: 0;
+    align-items: flex-start;
+    text-align: left;
+    min-width: 150px;
+  }
   h1 {
     font-size: 24px;
   }
-
   p {
     font-size: 16px;
   }
 }
 
-@media (max-width: 630px) and (min-width: 539px) {
-  img {
-    width: 300px;
-    position: relative;
-    right: 10%;
+@media (max-width: 538px) and (min-width: 368px) {
+  .dashboardContainer {
+    padding: 10px;
+    width: 95%;
+    gap: 10px;
   }
-
+  img.responsive-logo {
+    width: 200px;
+  }
+  .text-content {
+    min-width: 120px;
+  }
   h1 {
-    font-size: 20px;
+    font-size: 18px;
   }
-
   p {
-    font-size: 14px;
+    font-size: 13px;
+  }
+  .custom-button {
+    padding: 8px 16px;
+    margin-top: 15px;
   }
 }
 
-@media (max-width: 480px) {
-  img {
-    width: 200px;
+/* Specific Media Query for Below 367px */
+@media (max-width: 391px) {
+  .dashboardContainer {
+    padding: 8px;
+    width: 98%; /* Maximize width to fit content */
+    gap: 8px;
+    flex-wrap: nowrap; /* Ensure side-by-side layout */
+    overflow-x: hidden; /* Prevent horizontal overflow */
   }
-
+  img.responsive-logo {
+    width: clamp(80px, 40%, 120px); /* Scale image down proportionally */
+    min-width: 80px; /* Minimum size to stay visible */
+  }
+  .text-content {
+    min-width: clamp(100px, 50%, 150px); /* Scale text area */
+    flex: 1; /* Allow it to take remaining space */
+  }
   h1 {
-    font-size: 20px;
+    font-size: 14px; /* Smaller heading */
+    white-space: normal; /* Allow wrapping if needed */
   }
-
   p {
-    font-size: 14px;
+    font-size: 10px; /* Smaller paragraph */
+  }
+  .custom-button {
+    padding: 5px 10px;
+    margin-top: 8px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 341px) {
+  .dashboardContainer {
+    padding: 6px; /* Slightly tighter padding */
+    width: 98%; /* Maximize width */
+    gap: 6px; /* Reduced gap */
+    flex-wrap: nowrap; /* Keep side by side */
+    overflow-x: hidden; /* Prevent overflow */
+  }
+  img.responsive-logo {
+    width: clamp(60px, 35%, 100px); /* Further scale down image */
+    min-width: 60px; /* Smaller minimum width */
+  }
+  .text-content {
+    min-width: clamp(80px, 50%, 120px); /* Further scale down text area */
+    flex: 1; /* Take remaining space */
+  }
+  h1 {
+    font-size: 12px; /* Even smaller heading */
+    white-space: normal; /* Allow wrapping */
+  }
+  p {
+    font-size: 9px; /* Even smaller paragraph */
+  }
+  .custom-button {
+    padding: 4px 8px; /* Smaller button */
+    margin-top: 6px;
+    font-size: 10px; /* Smaller font */
+  }
+}
+
+@media (max-width: 299px) {
+  /* Optional: Further refine if needed */
+  .dashboardContainer {
+    padding: 5px;
+    gap: 5px;
+  }
+  img.responsive-logo {
+    width: 80px; /* Even smaller if necessary */
+  }
+  .text-content {
+    min-width: 90px;
+  }
+  h1 {
+    font-size: 12px;
+  }
+  p {
+    font-size: 9px;
   }
 }

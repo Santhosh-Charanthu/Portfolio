@@ -1,0 +1,382 @@
+.headContainer {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem 0;
+}
+
+.heading {
+  position: relative;
+  top: -30px;
+  background-color: #f0f4ff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #007bff;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.1);
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.heading p {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.heading:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+  border-color: #0056b3;
+}
+
+.letsConnect {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.image img {
+  height: 500px;
+  position: relative;
+  left: 70px;
+}
+
+.form-container {
+  position: relative;
+  top: -50px;
+  left: 9%;
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  bottom: -200px;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-group label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #444;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  margin-left: 20%;
+}
+
+.form-icon {
+  margin-right: 8px;
+  color: #007bff;
+  font-size: 1.2rem;
+}
+
+.form-group input,
+.form-group textarea {
+  position: relative;
+  left: 20%;
+  width: 60%;
+  padding: 0.9rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  background: #fff;
+  color: black;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.form-group input:hover,
+.form-group textarea:hover {
+  border-color: #bbb;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+  height: 200px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+.form-group input:focus + label,
+.form-group textarea:focus + label {
+  color: #007bff;
+}
+
+.submit-btn {
+  position: relative;
+  left: 20%;
+  background-color: #007bff;
+  color: white;
+  padding: 0.9rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 60%;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-icon {
+  margin-right: 8px;
+  font-size: 1.1rem;
+}
+
+.submit-btn:focus {
+  outline: none;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2);
+}
+
+.submit-btn.success {
+  background-color: #28a745;
+  box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+}
+
+.submit-btn.success:hover {
+  background-color: #218838;
+  box-shadow: 0 6px 15px rgba(40, 167, 69, 0.4);
+}
+
+.submit-btn.success:active {
+  box-shadow: 0 2px 5px rgba(40, 167, 69, 0.2);
+}
+
+@media (max-width: 1240px) {
+  .image img {
+    height: 400px;
+  }
+}
+
+@media (max-width: 1130px) {
+  .image img {
+    height: 350px;
+  }
+
+  .image {
+    position: relative;
+    right: 9%;
+  }
+}
+
+/* Adjustments for 980px to 769px */
+@media (max-width: 980px) {
+  .form-container {
+    padding: 1.5rem; /* Slightly reduce padding */
+  }
+
+  .form-group label {
+    margin-left: 15%; /* Slightly reduce margin */
+    font-size: 1.1rem; /* Keep font size consistent */
+  }
+
+  .form-group input,
+  .form-group textarea {
+    left: 15%; /* Match label alignment */
+    width: 70%; /* Increase width slightly to avoid shrinking */
+    padding: 0.8rem; /* Slightly reduce padding */
+  }
+
+  .submit-btn {
+    left: 15%; /* Match input alignment */
+    width: 70%; /* Match input width */
+    padding: 0.8rem 1.2rem; /* Adjust padding */
+  }
+
+  .image img {
+    height: 320px; /* Slightly reduce image size */
+    left: 50px; /* Start aligning image more centrally */
+  }
+}
+
+@media (max-width: 768px) {
+  .letsConnect {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image img {
+    height: 300px;
+    left: 30px;
+    margin-bottom: 1rem;
+  }
+
+  .form-container {
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    bottom: 0;
+  }
+
+  .form-group label {
+    margin-left: 10%;
+    font-size: 1rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    left: 10%;
+    width: 80%;
+    padding: 0.7rem;
+  }
+
+  .submit-btn {
+    left: 10%;
+    width: 80%;
+    padding: 0.7rem 1rem;
+  }
+
+  .heading p {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .form-container {
+    padding: 0.75rem;
+  }
+
+  .form-group label {
+    margin-left: 5%;
+    font-size: 0.95rem;
+  }
+
+  .form-icon {
+    font-size: 1.1rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    left: 5%;
+    width: 90%;
+    padding: 0.6rem;
+    font-size: 0.95rem;
+  }
+
+  .form-group textarea {
+    height: 180px;
+  }
+
+  .submit-btn {
+    left: 5%;
+    width: 90%;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+  }
+
+  .button-icon {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .headContainer {
+    padding: 1rem 0;
+  }
+
+  .heading {
+    top: -20px;
+    padding: 0.3rem 1rem;
+  }
+
+  .heading p {
+    font-size: 1.2rem;
+  }
+
+  .image img {
+    height: 200px;
+  }
+
+  .form-container {
+    padding: 0.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  .form-group label {
+    margin-left: 5%;
+    font-size: 0.9rem;
+  }
+
+  .form-icon {
+    font-size: 1rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    left: 5%;
+    width: 90%;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .form-group textarea {
+    height: 150px;
+  }
+
+  .submit-btn {
+    left: 5%;
+    width: 90%;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+
+  .button-icon {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 330px) {
+  .headContainer {
+    padding: 1rem 0;
+  }
+
+  .heading {
+    top: -20px;
+    padding: 0.3rem 1rem;
+  }
+
+  .heading p {
+    font-size: 1.2rem;
+  }
+}

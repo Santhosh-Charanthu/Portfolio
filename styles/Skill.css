@@ -1,26 +1,80 @@
+.skillContainer {
+  display: flex;
+  flex-direction: column; /* Stack rows vertically */
+  justify-content: start;
+  position: relative;
+  bottom: 20px;
+  right: 10px;
+  width: 100%; /* Ensure it takes full width */
+  padding: 1rem; /* Add padding for breathing room */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.skillRow {
+  display: flex;
+  flex-wrap: wrap; /* Allow skills to wrap within each row */
+  justify-content: flex-start;
+  width: 100%;
+  gap: 0.75rem; /* Add consistent spacing between skills */
+  margin-bottom: 1rem; /* Space between rows */
+}
+
 .skills {
-  display: inline-block;
-  padding: 2px 10px;
+  display: inline-flex; /* Use inline-flex for better alignment */
+  align-items: center; /* Center content vertically */
+  padding: clamp(2px, 0.5vw, 6px) clamp(8px, 1.5vw, 12px); /* Responsive padding */
   border: 2px solid #393e46;
   background-color: #393e46;
   border-radius: 20px;
   color: white;
-  margin: 5px;
+  margin: 0; /* Remove margin since gap handles spacing */
+  font-size: clamp(14px, 2vw, 16px); /* Responsive font size */
+  white-space: nowrap; /* Prevent text wrapping */
+  transition: transform 0.2s ease; /* Optional: hover effect */
+  padding: 5px 10px; /* Smaller padding */
+  font-size: 12px; /* Smaller font for mobile */
+  border-radius: 16px; /* Slightly smaller radius */
 }
 
-.skillContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+.skills:hover {
+  transform: scale(1.05); /* Optional: subtle hover effect */
 }
 
-.skillRow {
-  display: flex;
-  flex-wrap: wrap;
+/* Media Queries for Responsiveness */
+@media (max-width: 769px) {
+  .skillContainer {
+    padding: 0.5rem; /* Reduce padding on tablets */
+    position: relative;
+    bottom: 10px;
+  }
+
+  .skillRow {
+    gap: 0.5rem; /* Reduce gap */
+    margin-bottom: 0.75rem; /* Reduce space between rows */
+  }
+
+  .skills {
+    padding: 4px 10px; /* Slightly smaller padding */
+    font-size: 14px; /* Fixed size for readability */
+  }
 }
 
-.skillRow {
-  display: flex;
-  justify-content: flex-start;
-  width: 100%;
+@media (max-width: 480px) {
+  .skillContainer {
+    padding: 0.25rem; /* Minimal padding on phones */
+    position: relative;
+    bottom: 5px;
+    left: -5px;
+  }
+
+  .skillRow {
+    gap: 0.4rem; /* Further reduce gap */
+    margin-bottom: 0.5rem;
+  }
+
+  .skills {
+    padding: 3px 8px; /* Smaller padding */
+    font-size: 12px; /* Smaller font for mobile */
+    border-radius: 16px; /* Slightly smaller radius */
+  }
 }
