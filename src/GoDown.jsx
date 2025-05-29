@@ -1,17 +1,14 @@
 import { useState } from "react";
 import "../styles/GoDown.css";
 import ExploreNest from "./assets/ExploreNest.png";
+import BlogNest from "./assets/BlogNest.png";
+import ProjectCard from "./ProjectCard";
 
 export default function GoDown() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleClick = () => {
-    setIsOpen(true);
-  };
-
-  const handleClose = () => {
-    setIsOpen(false);
-  };
+  const handleClick = () => setIsOpen(true);
+  const handleClose = () => setIsOpen(false);
 
   return (
     <>
@@ -21,50 +18,33 @@ export default function GoDown() {
         </svg>
       </button>
 
-      {/* Fullscreen Scrollable Overlay */}
       <div className={`overlay-page ${isOpen ? "active" : ""}`}>
         <button className="close-button" onClick={handleClose}>
           ❌
         </button>
         <h2>My Projects</h2>
-        <div className="parent">
-          <div className="desc-card">
-            <h2>ExploreNest – Discover, Share & Review Places</h2>
-            <p className="desc-para">
-              ExploreNest is a dynamic web application that allows users to
-              post, explore, and review various places. Users can create an
-              account, log in, and share listings with images, descriptions, and
-              pricing details. The platform also enables users to engage with
-              each listing by adding reviews and sharing their experiences. The
-              homepage highlights featured listings, making it easy to discover
-              new places. Built with a user-friendly interface and seamless
-              functionality, PlaceShare enhances how people share and discover
-              locations.
-            </p>
-            <p>
-              Tech Stack: [Node.js, Express.js, EJS, MongoDb, CSS, Bootstrap.]
-            </p>
-          </div>
 
-          <div className="card">
-            <img
-              className="webImg"
-              src={ExploreNest}
-              alt="ExploreNest"
-              loading="eager"
-            />
-            <div role="tooltip" id="help-tooltip" className="tool">
-              <strong>
-                <a
-                  href="https://explorenest-dq3b.onrender.com/listings"
-                  target="_blank"
-                >
-                  Explore
-                </a>
-              </strong>
-            </div>
-          </div>
-        </div>
+        <ProjectCard
+          title="ExploreNest – Discover, Share & Review Places"
+          description="ExploreNest is a dynamic web application that allows users to post, explore, and review various places. Users can create an account, log in, and share listings with images, descriptions, and pricing details. The platform also enables users to engage with each listing by adding reviews and sharing their experiences. The homepage highlights featured listings, making it easy to discover new places. Built with a user-friendly interface and seamless functionality, PlaceShare enhances how people share and discover locations."
+          techStack={[
+            "Node.js",
+            "Express.js",
+            "EJS",
+            "MongoDB Atlas",
+            "CSS",
+            "Bootstrap",
+          ]}
+          imgSrc={ExploreNest}
+          link="https://explorenest-dq3b.onrender.com/listings"
+        />
+        <ProjectCard
+          title="BlogNest – Write. Save. Publish. Repeat."
+          description="The blog editor provides users with a clean and intuitive interface to effortlessly create and edit blog posts. As users type, their content is automatically saved as a draft, ensuring no data is lost during the writing process. These drafts are securely stored and can be resumed at any time, allowing for seamless writing continuity. Once a blog is complete, users can publish it with a single click. Published blogs are displayed in an easily accessible list, making them simple to browse and manage. Users also have the ability to revisit and update any published post. The editor delivers a smooth writing experience with real-time saving and feedback. It is fully optimized for both desktop and mobile devices, adapting responsively to different screen sizes. Overall, the platform emphasizes simplicity, reliability, and a user-friendly experience."
+          techStack={["Node.js", "Express.js", "React", "MongoDB Atlas", "CSS"]}
+          imgSrc={BlogNest}
+          link="https://blognest-kmn1.onrender.com/login"
+        />
       </div>
     </>
   );

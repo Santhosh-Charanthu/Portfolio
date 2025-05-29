@@ -40,7 +40,6 @@ export default function Connect() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }} // Slightly faster transition to reduce lag
           >
             <motion.div
               className="modal-content1"
