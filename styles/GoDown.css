@@ -10,7 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
+  position: relative;
   bottom: 70px;
   left: 50%;
   transform: translateX(-50%);
@@ -150,6 +150,6 @@
 @media (max-width: 350px) {
   .circle-button {
     position: relative;
-    bottom: 100px;
+    bottom: 130px;
   }
 }
